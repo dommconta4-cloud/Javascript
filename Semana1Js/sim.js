@@ -22,6 +22,6 @@ function exercicio_2() {
     exercicio_2()
 // exercicio 3
 const cardapio = ["moqueca", "bisteca de porco", "camarão", "salada de fruta"];
-for (comida in cardapio){
-     console.log(`${+comida + 1}. ${cardapio[comida]}`);
-}
+cardapio.forEach((comidas,index) => {
+    console.log (index, comidas)
+})
