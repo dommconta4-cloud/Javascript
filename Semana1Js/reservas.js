@@ -11,22 +11,33 @@
 // com um loop na mesma função do array, eu organizo ela em linhas, cada item vai ser numerado
 // 2 mesas pequenas, 2 médias, 1 grande e 1 gigante
 
-//  
-let ReservasDoDia = [1,2,4,5,7,8]
-    ReservasDoDia.forEach((quantidade, index) => {
-        console.log ((index+1), "-", +quantidade)
-        
-        if (quantidade >=8){
-            console.log ("mesa gigante reservada")
-        }
-        else if (quantidade >=6){
-            console.log ("mesa grande reservada!")
-        }
-        else if (quantidade >=3){
-            console.log ("mesa média reservada")
-        }
-        else {
-            console.log ("mesa pequena")
-        }
-    });
-    // das 6 mesas, vou fazer com que o programa conte quantas mesas foram pequenas, medias, etc
+//
+let ReservasDoDia = [1, 2, 4, 5, 7, 8];
+let contador_pequeno = 0
+
+let contador_medio = 0
+
+let contador_grande = 0
+
+let contador_gigante = 0
+
+ReservasDoDia.forEach((quantidade, index) => {
+  console.log(index + 1, "-", +quantidade);
+
+  if (quantidade >= 8) {
+    console.log("mesa gigante reservada");
+    contador_gigante +=1
+  } else if (quantidade >= 6) {
+    console.log("mesa grande reservada!");
+    contador_grande +=1
+  } else if (quantidade >= 3) {
+    console.log("mesa média reservada");
+    contador_medio +=1
+  } else {
+    console.log("mesa pequena");
+    contador_pequeno +=1
+  }
+});
+// das 6 mesas, vou fazer com que o programa conte quantas mesas foram pequenas, medias, etc
+
+console.log (`tivemos ${ReservasDoDia.length} reservas hoje, dentre elas ${contador_pequeno} mesas pequenas, ${contador_medio} mesas médias, ${contador_grande} mesas grandes e ${contador_gigante} mesas gigantes`)
